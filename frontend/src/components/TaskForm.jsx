@@ -13,20 +13,26 @@ const TaskForm = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
-      <input
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button type="submit">Add Task</button>
-    </form>
+    <div className="task-form-container double-list">
+      <form className="task-form" onSubmit={handleSubmit}>
+        <input
+          className="task-form-input"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+        <input
+          className="task-form-input"
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <button className="task-form-button" type="submit">
+          Add Task
+        </button>
+      </form>
+    </div>
   );
 };
 

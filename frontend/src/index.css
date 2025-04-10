@@ -1,13 +1,130 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #b2dbfe;
+  color: rgb(65, 63, 63);
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #6cc3f6;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #113df0;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-border-line {
+  min-height: 800px;
+  margin: 30px;
+  border-radius: 30px;
+  background-color: rgba(251, 251, 251, 0.983);
+}
+.task-title {
+  padding: 16px 26px;
+  border-bottom: 8px solid #b2dbfe;
+}
+.forms-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px;
+}
+.forms-wrap-text {
+  display: flex;
+  gap: 20px;
+}
+.forms-wrap-top {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.double-list {
+  width: calc((100% - 10px) / 2);
+}
+
+.task-form-input {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  height: 34px;
+  margin-right: 10px;
+  padding-left: 10px;
+  background-color: transparent;
+}
+.task-form-button {
+  margin: 6px 6px 6px 0;
+}
+.task-filters-button {
+  margin: 6px 6px 6px 0;
+}
+.task-list-button {
+  margin-right: 10px;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+}
+.task-list-item {
+  height: 116px;
+  width: calc((100% - 52px) / 2);
+  margin-bottom: 6px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+.task-title-checkBox {
+  padding-left: 10px;
+}
+.task-description {
+  margin: 8px 0 0;
+  padding-left: 16px;
+  height: 36px;
+}
+.task-description-button {
+  margin-left: 10px;
 }

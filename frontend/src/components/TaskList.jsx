@@ -20,48 +20,70 @@ const TaskList = ({ tasks, onDelete, onToggle, onUpdate }) => {
   };
 
   return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task.id} style={{ marginBottom: "1rem" }}>
-          {editingId === task.id ? (
-            <>
-              <input
-                value={editTitle}
-                onChange={(e) => setEditTitle(e.target.value)}
-              />
-              <input
-                value={editDesc}
-                onChange={(e) => setEditDesc(e.target.value)}
-              />
-              <button onClick={saveEdit}>Save</button>
-              <button onClick={() => setEditingId(null)}>Cancel</button>
-            </>
-          ) : (
-            <>
-              <h3>
-                {task.title} {task.isCompleted ? "✅" : "❌"}
-              </h3>
-              <p>{task.description}</p>
-              <button onClick={() => onToggle(task.id, !task.isCompleted)}>
-                {task.isCompleted ? "Mark as done" : "Mark as not done"}
-              </button>
-              <button
-                onClick={() => onDelete(task.id)}
-                style={{ marginLeft: "1rem" }}
-              >
-                Delete
-              </button>
-              <button
-                onClick={() => startEditing(task)}
-                style={{ marginLeft: "1rem" }}
-              >
-                Edit
-              </button>
-            </>
-          )}
-        </li>
-      ))}
-    </ul>
+    <div className="task-list-container">
+      <ul className="task-list">
+        {tasks.map((task) => (
+          <li className="task-list-item" key={task.id}>
+            {editingId === task.id ? (
+              <>
+                <input
+                  className="task-form-input"
+                  value={editTitle}
+                  onChange={(e) => setEditTitle(e.target.value)}
+                  style={{ margin: "0.5rem" }}
+                />
+                <input
+                  className="task-form-input"
+                  value={editDesc}
+                  onChange={(e) => setEditDesc(e.target.value)}
+                  style={{ marginBottom: "1rem" }}
+                />
+                <button
+                  className="task-list-button"
+                  onClick={saveEdit}
+                  style={{ marginLeft: "1rem" }}
+                >
+                  Save
+                </button>
+                <button
+                  className="task-list-button"
+                  onClick={() => setEditingId(null)}
+                >
+                  Cancel
+                </button>
+              </>
+            ) : (
+              <>
+                <h3 className="task-title-checkBox">
+                  {task.title} {task.isCompleted ? "✅" : "❌"}
+                </h3>
+                <p className="task-description">{task.description}</p>
+                <button
+                  className="task-description-button"
+                  onClick={() => onToggle(task.id, !task.isCompleted)}
+                >
+                  {task.isCompleted ? "Mark as done" : "Mark as not done"}
+                </button>
+                <button
+                  className="task-delete-button"
+                  onClick={() => onDelete(task.id)}
+                  style={{ marginLeft: "1rem" }}
+                >
+                  Delete
+                </button>
+                <button
+                  className="task-edit-button"
+                  onClick={() => startEditing(task)}
+                  style={{ marginLeft: "1rem" }}
+                >
+                  Edit
+                </button>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

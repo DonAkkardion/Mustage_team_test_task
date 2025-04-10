@@ -1,3 +1,6 @@
+.ul,
+ol {
+}
 .formBox {
   display: flex;
   flex-direction: column;

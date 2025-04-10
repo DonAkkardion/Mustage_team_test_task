@@ -63,16 +63,24 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Task Management App</h1>
-      <TaskForm onAdd={handleAdd} />
-      <TaskFilters onFilter={handleFilter} onSearch={handleSearch} />
-      <TaskList
-        tasks={tasks}
-        onDelete={handleDelete}
-        onToggle={handleToggle}
-        onUpdate={handleUpdate}
-      />
+    <div className="task-border-line">
+      <h1 className="task-title">Task Management App</h1>
+      <div className="forms-wrap">
+        <div className="forms-wrap-top">
+          <h3 className="double-list">Create New Task</h3>
+          <h3 className="double-list">Manage Tasks</h3>
+          <TaskForm onAdd={handleAdd} />
+          <TaskFilters onFilter={handleFilter} onSearch={handleSearch} />
+        </div>
+        <div className="forms-wrap-bottom">
+          <TaskList
+            tasks={tasks}
+            onDelete={handleDelete}
+            onToggle={handleToggle}
+            onUpdate={handleUpdate}
+          />
+        </div>
+      </div>
     </div>
   );
 }
